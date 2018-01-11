@@ -33,9 +33,9 @@ def get_quote(quote_str):
         ret = ''
         for q in quote:
             try:
-                ret += _get_quote(q)
+                ret += (_get_quote(q) + '\n')
             except Exception as e:
-                ret += '({}: 검색실패)'
+                ret += '({}: 검색실패)\n'
         return ret
     else:
         return _get_quote(quote)
