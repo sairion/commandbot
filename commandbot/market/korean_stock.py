@@ -7,10 +7,16 @@ from bs4 import BeautifulSoup
 
 code_cache = {
     '우리기술투자': '041190',
+    '카카오': '035720',
+    'SBI인베스트먼트': '019550',
+    '대성창투': '027830',
+    '에이티넘인베스트': '021080',
 }
 aliases = {
     '우기투': '우리기술투자',
+    '두나무': ['우리기술투자', '카카오', 'SBI인베스트먼트', '에이티넘인베스트', '대성창투']
 }
+
 
 class CodeNotfoundError(Exception):
     pass
@@ -20,7 +26,21 @@ code_search_url = 'http://finance.naver.com/search/searchList.nhn?query={}'
 def extract_text_from_nodelist(l):
     return list(map(lambda a:a.get_text(), l))
 
-def get_quote(stock_name):
+def get_quote(quote_str):
+    if quote_str in aliases:
+        quote = aliases[quote_str]
+    if isinstance(quote, list):
+        ret = ''
+        for q in quote:
+            try:
+                ret += _get_quote(q)
+            except Exception as e:
+                ret += '({}: 검색실패)'
+        return ret
+    else:
+        return _get_quote(quote)
+
+def _get_quote(stock_name):
     market = '한국시장'
 
     try:
@@ -61,7 +81,7 @@ def get_quote(stock_name):
         quote_price = info_soup.select('.no_today .blind')[0].get_text() # 현재가
 
         result = ""
-        result = '[{stock_name}({code})] 현재가 {quote_price}원({updown}{price_change}/{updown}{percentage}% | {low_price}원 - {high_price}원) / 거래대금 {transaction_vol}원 / 전일가 {prev_price}원'.format(stock_name=stock_name, code=code, quote_price=quote_price, low_price=low_price, high_price=high_price, transaction_vol=transaction_vol, prev_price=prev_price, updown=updown, price_change=price_change, percentage=percentage)
+        result = '[{stock_name}({code})] 현재가 {quote_price}원({updown}{price_change}/{updown}{percentage}% | {low_price}원 - {high_price}원) / 거래대금 {transaction_vol}백만원 / 전일가 {prev_price}원. '.format(stock_name=stock_name, code=code, quote_price=quote_price, low_price=low_price, high_price=high_price, transaction_vol=transaction_vol, prev_price=prev_price, updown=updown, price_change=price_change, percentage=percentage)
     except Exception as e:
         result = '[{market}] 에러! : {msg}'.format(market=market, msg=e.__repr__())
 

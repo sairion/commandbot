@@ -36,6 +36,9 @@ codes = [
   "MTL",
   "ARDR",
   "SNT",
+  "VTC",
+  "PIVX",
+  "TIX",
 # mi sang jang coins:
 #   "GBYTE",
 #   "DGD",
@@ -50,9 +53,7 @@ codes = [
 #   "PART",
 #   "MCO",
 #   "CLOAK",
-  "VTC",
 #   "KORE",
-  "PIVX",
 #   "DYN",
 #   "RADS",
 #   "SPHR",
@@ -98,7 +99,6 @@ codes = [
 #   "SYS",
 #   "GNT",
 #   "XAUR",
-  "TIX",
 #   "SNGLS",
 #   "PTOY",
 #   "AMP",
@@ -126,7 +126,7 @@ codes = [
 #   "XDN",
 #   "DOGE",
 #   "RDD"
-] # use `copy($('table.highlight tr td.tit em').map((i, e) => e.textContent.replace('/KRW', '')).toArray())` to retrieve
+] # use `copy($('table.highlight tr td.tit em').map((i, e) => e.textContent.replace(/\/(KRW|BTC)/, '')).toArray())` to retrieve
 params_all = ','.join(map(lambda s:code_format.format(to_currency='{to_currency}', from_currency=s), codes))
 
 def format_number(title, input, to_currency):
