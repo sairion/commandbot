@@ -29,6 +29,8 @@ def extract_text_from_nodelist(l):
 def get_quote(quote_str):
     if quote_str in aliases:
         quote = aliases[quote_str]
+    else:
+        quote = quote_str
     if isinstance(quote, list):
         ret = ''
         for q in quote:

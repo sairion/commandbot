@@ -33,7 +33,6 @@ commands = {
     '빗플': {'processor': bitflyer.get_currency, 'default_arg': 'BTC', },
     '프리미엄': {'simple_return': premium.get},
     '주식': {'processor': korean_stock.get_quote, 'empty_msg': '!주식: 코드를 입력해주세요 ex) !주식 우기투', 'default_arg': None},
-    '마켓캡': {'processor': None}
 }
 command_aliases = {
     '김프': '프리미엄',
@@ -42,10 +41,7 @@ command_aliases = {
 
 
 def functionlist(msg):
-    if msg.find('머니봇-ping') >= 0:
-        return '머니머니'
-
-    elif msg.find('!시세') >= 0:
+    if msg.find('!시세') >= 0:
         args = msg.split()[1:]
         if args:
             command = args[0]
