@@ -30,7 +30,7 @@ def stddev(data, ddof=0):
 
 def get():
     market = 'Premium'
-    url = 'https://coinpremiums.herokuapp.com/json'
+    url = 'http://coinpremiums.jaeholee.org/json'
 
     try:
         result = ""
