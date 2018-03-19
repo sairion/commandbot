@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import requests
 import urllib.parse
-
+from requests_html import HTMLSession
 from bs4 import BeautifulSoup
 
 
@@ -12,9 +12,42 @@ code_cache = {
     '대성창투': '027830',
     '에이티넘인베스트': '021080',
 }
+
+def market_summary(code, market_name):
+    session = HTMLSession()
+    r = session.get('http://finance.naver.com/sise/sise_index.nhn?code={}'.format(code))
+    h = r.html
+    current_index_point = h.find('#now_value', first=True).text
+    change = h.find('#change_value_and_rate span')[0].text
+
+    prefix = ''
+    direction_classes = h.find('#quotient', first=True).attrs['class']
+    if 'up' in direction_classes:
+        prefix = '▲'
+    elif 'dn' in direction_classes:
+        prefix = '▼'
+
+    quantity_els = h.find('.lst_kos_info .dd span')
+    quantity_personnel = quantity_els[0].text
+    quantity_foreign = quantity_els[2].text
+    quantity_institution = quantity_els[4].text
+
+    result = '[{market_name}] {a} {prefix}{b} (개인 {c} / 외국인 {d} / 기관 {e})'.format(a=current_index_point, b=change, prefix=prefix, c=quantity_personnel, d=quantity_foreign, e=quantity_institution, market_name=market_name)
+
+    return result
+
+def market_summary_kospi():
+    return market_summary('KOSPI', '코스피')
+
+def market_summary_kosdaq():
+    return market_summary('KOSDAQ', '코스닥')
+
 aliases = {
     '우기투': '우리기술투자',
-    '두나무': ['우리기술투자', '카카오', 'SBI인베스트먼트', '에이티넘인베스트', '대성창투']
+    '두나무': ['우리기술투자', '카카오', 'SBI인베스트먼트', '에이티넘인베스트', '대성창투'],
+    # indexes
+    '코스피': market_summary_kospi,
+    '코스닥': market_summary_kosdaq,
 }
 
 
@@ -39,6 +72,8 @@ def get_quote(quote_str):
             except Exception as e:
                 ret += '({}: 검색실패)\n'
         return ret
+    elif callable(quote):
+        return quote()
     else:
         return _get_quote(quote)
 
