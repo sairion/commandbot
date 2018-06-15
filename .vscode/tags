@@ -1,0 +1,84 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+BeautifulSoup	../commandbot/market/korean_stock.py	/^from bs4 import BeautifulSoup$/;"	kind:namespace	line:5
+CodeNotfoundError	../commandbot/market/korean_stock.py	/^class CodeNotfoundError(Exception):$/;"	kind:class	line:47
+HTMLSession	../commandbot/market/korean_stock.py	/^from requests_html import HTMLSession$/;"	kind:namespace	line:4
+__init__.py	../commandbot/__init__.py	1;"	kind:file	line:1
+__init__.py	../commandbot/market/__init__.py	1;"	kind:file	line:1
+_get_quote_kakao	../commandbot/market/korean_stock.py	/^def _get_quote_kakao(stock_name):$/;"	kind:function	line:105
+_ss	../commandbot/market/premium.py	/^def _ss(data):$/;"	kind:function	line:13
+aliases	../commandbot/market/korean_stock.py	/^aliases = {$/;"	kind:variable	line:39
+author	../setup.py	/^    author="Jaeho Lee",$/;"	kind:variable	line:7
+author_email	../setup.py	/^    author_email="me@jaeholee.org",$/;"	kind:variable	line:8
+bitflyer	../commandbot/functions.py	/^from .market import yahoo, coinone, poloniex, upbit, bithumb, premium, bitflyer, korean_stock$/;"	kind:namespace	line:3
+bitflyer.py	../commandbot/market/bitflyer.py	1;"	kind:file	line:1
+bithumb	../commandbot/functions.py	/^from .market import yahoo, coinone, poloniex, upbit, bithumb, premium, bitflyer, korean_stock$/;"	kind:namespace	line:3
+bithumb.py	../commandbot/market/bithumb.py	1;"	kind:file	line:1
+code_aliases	../commandbot/functions.py	/^code_aliases = {'비트': 'BTC', '빗코': 'BTC', '비트코인': 'BTC', '이더': 'ETH', '이클': 'ETC',$/;"	kind:variable	line:5
+code_cache	../commandbot/market/korean_stock.py	/^code_cache = {$/;"	kind:variable	line:8
+code_format	../commandbot/market/upbit.py	/^code_format = 'CRIX.UPBIT.{to_currency}-{from_currency}'$/;"	kind:variable	line:5
+codes	../commandbot/market/upbit.py	/^codes = [$/;"	kind:variable	line:6
+coinone	../commandbot/functions.py	/^from .market import yahoo, coinone, poloniex, upbit, bithumb, premium, bitflyer, korean_stock$/;"	kind:namespace	line:3
+coinone.py	../commandbot/market/coinone.py	1;"	kind:file	line:1
+command_aliases	../commandbot/functions.py	/^command_aliases = {$/;"	kind:variable	line:37
+commands	../commandbot/functions.py	/^commands = {$/;"	kind:variable	line:28
+datetime	../commandbot/functions.py	/^import datetime$/;"	kind:namespace	line:1
+description	../setup.py	/^    description="partial fork of pse1202\/coinbot",$/;"	kind:variable	line:9
+fake_headers	../commandbot/market/upbit.py	/^fake_headers = {'User-Agent': 'Mozilla\/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/63.0.3239.84 Safari\/537.36' }$/;"	kind:variable	line:151
+find_code	../commandbot/market/korean_stock.py	/^def find_code(stock_name):$/;"	kind:function	line:78
+format_number	../commandbot/market/upbit.py	/^def format_number(title, input, to_currency):$/;"	kind:function	line:132
+functionlist	../commandbot/functions.py	/^def functionlist(msg):$/;"	kind:function	line:43
+functions.py	../commandbot/functions.py	1;"	kind:file	line:1
+get	../commandbot/market/premium.py	/^def get():$/;"	kind:function	line:31
+get_currency	../commandbot/market/bitflyer.py	/^def get_currency(currency):$/;"	kind:function	line:3
+get_currency	../commandbot/market/bithumb.py	/^def get_currency(currency):$/;"	kind:function	line:4
+get_currency	../commandbot/market/coinone.py	/^def get_currency(currency):$/;"	kind:function	line:4
+get_currency	../commandbot/market/poloniex.py	/^def get_currency(from_currency, to_currency='BTC'):$/;"	kind:function	line:4
+get_currency	../commandbot/market/upbit.py	/^def get_currency(from_currency, to_currency='KRW'):$/;"	kind:function	line:153
+get_currency	../commandbot/market/yahoo.py	/^def get_currency(currency='USD'):$/;"	kind:function	line:4
+get_info_url	../commandbot/market/korean_stock.py	/^def get_info_url(stocks):$/;"	kind:function	line:72
+get_product_codes	../commandbot/market/bitflyer.py	/^    def get_product_codes():$/;"	kind:function	line:30
+get_quote	../commandbot/market/korean_stock.py	/^def get_quote(quote_str):$/;"	kind:function	line:50
+get_ticker	../commandbot/market/bitflyer.py	/^    def get_ticker(product_code):$/;"	kind:function	line:16
+json	../commandbot/market/premium.py	/^import json$/;"	kind:namespace	line:2
+korean_stock	../commandbot/functions.py	/^from .market import yahoo, coinone, poloniex, upbit, bithumb, premium, bitflyer, korean_stock$/;"	kind:namespace	line:3
+korean_stock.py	../commandbot/market/korean_stock.py	1;"	kind:file	line:1
+license	../setup.py	/^    license="MIT",$/;"	kind:variable	line:11
+long_description	../setup.py	/^    long_description="partial fork of pse1202\/coinbot",$/;"	kind:variable	line:10
+market	../commandbot/market/korean_stock.py	/^market = '한국시장'$/;"	kind:variable	line:70
+market	../commandbot/market/upbit.py	/^market = 'Upbit'$/;"	kind:variable	line:4
+market_summary	../commandbot/market/korean_stock.py	/^def market_summary(code, market_name):$/;"	kind:function	line:16
+mean	../commandbot/market/premium.py	/^def mean(data):$/;"	kind:function	line:6
+name	../setup.py	/^    name="commandbot",$/;"	kind:variable	line:5
+packages	../setup.py	/^    packages=[$/;"	kind:variable	line:13
+params_all	../commandbot/market/upbit.py	/^params_all = ','.join(map(lambda s:code_format.format(to_currency='{to_currency}', from_currency=s), codes))$/;"	kind:variable	line:130
+parse	../commandbot/market/korean_stock.py	/^import urllib.parse$/;"	kind:namespace	line:3
+poloniex	../commandbot/functions.py	/^from .market import yahoo, coinone, poloniex, upbit, bithumb, premium, bitflyer, korean_stock$/;"	kind:namespace	line:3
+poloniex.py	../commandbot/market/poloniex.py	1;"	kind:file	line:1
+premium	../commandbot/functions.py	/^from .market import yahoo, coinone, poloniex, upbit, bithumb, premium, bitflyer, korean_stock$/;"	kind:namespace	line:3
+premium.py	../commandbot/market/premium.py	1;"	kind:file	line:1
+process_command	../commandbot/functions.py	/^def process_command(args, simple_return=None, processor=None, multiple=False, default_arg='ALL', empty_msg='코드를 입력해주세요'):$/;"	kind:function	line:12
+random	../commandbot/functions.py	/^import random$/;"	kind:namespace	line:2
+requests	../commandbot/market/bitflyer.py	/^import requests$/;"	kind:namespace	line:1
+requests	../commandbot/market/bithumb.py	/^import requests$/;"	kind:namespace	line:1
+requests	../commandbot/market/coinone.py	/^import requests$/;"	kind:namespace	line:1
+requests	../commandbot/market/korean_stock.py	/^import requests$/;"	kind:namespace	line:2
+requests	../commandbot/market/poloniex.py	/^import requests$/;"	kind:namespace	line:1
+requests	../commandbot/market/premium.py	/^import requests$/;"	kind:namespace	line:1
+requests	../commandbot/market/upbit.py	/^import requests$/;"	kind:namespace	line:1
+requests	../commandbot/market/yahoo.py	/^import requests$/;"	kind:namespace	line:1
+setup	../setup.py	/^from distutils.core import setup$/;"	kind:namespace	line:1
+setup.py	../setup.py	1;"	kind:file	line:1
+stddev	../commandbot/market/premium.py	/^def stddev(data, ddof=0):$/;"	kind:function	line:19
+upbit	../commandbot/functions.py	/^from .market import yahoo, coinone, poloniex, upbit, bithumb, premium, bitflyer, korean_stock$/;"	kind:namespace	line:3
+upbit.py	../commandbot/market/upbit.py	1;"	kind:file	line:1
+url	../commandbot/market/upbit.py	/^url = 'https:\/\/crix-api.upbit.com\/v1\/crix\/recent'$/;"	kind:variable	line:3
+url	../setup.py	/^    url="http:\/\/github.com\/sairion\/commandbot",$/;"	kind:variable	line:12
+urllib	../commandbot/market/korean_stock.py	/^import urllib.parse$/;"	kind:namespace	line:3
+version	../setup.py	/^    version="0.1",$/;"	kind:variable	line:6
+yahoo	../commandbot/functions.py	/^from .market import yahoo, coinone, poloniex, upbit, bithumb, premium, bitflyer, korean_stock$/;"	kind:namespace	line:3
+yahoo.py	../commandbot/market/yahoo.py	1;"	kind:file	line:1
