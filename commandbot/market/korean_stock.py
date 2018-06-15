@@ -80,6 +80,8 @@ def find_code(stock_name):
     if stock_name in aliases:
         stock_name = aliases[stock_name]
     if stock_name.isdigit():
+        code = 'KOREA-A{}'.format(stock_name)
+    if stock_name.startswith('KOREA-A'):
         code = stock_name
 
     if code is None:
@@ -118,13 +120,12 @@ def _get_quote_kakao(stock_name):
 
         if info_json['change'] == 'RISE':
             updown = '▲'
-        if info_json['change'] == 'FALL':
+        elif info_json['change'] == 'FALL':
             updown = '▼'
         else:
             updown = '-'
 
         quote_price = info_json['tradePrice']
-
         result = ""
         result = '[{stock_name}({code})] 현재가 {quote_price:,.0f}원({updown} {price_change:,.0f}/{updown} {percentage:.2f}% / range {low_price:,.0f}원 - {high_price:,.0f}원) / 거래량 {transaction_vol:,}원 / 전일가 {prev_price:,.0f}원. '.format(stock_name=stock_name, code=code, quote_price=quote_price, low_price=low_price, high_price=high_price, transaction_vol=transaction_vol, prev_price=prev_price, updown=updown, price_change=price_change, percentage=percentage)
     except Exception as e:
